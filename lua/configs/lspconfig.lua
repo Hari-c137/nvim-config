@@ -2,6 +2,7 @@
 local default_servers = {
   "bashls",
   "clangd",
+  "rust_analyzer",
   "cssls",
   "dockerls",
   "html",
