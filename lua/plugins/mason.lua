@@ -1,48 +1,28 @@
-return {
-  "williamboman/mason.nvim",
-  config = function(_, opts)
-    require("mason").setup(opts)
-    local mason_registry = require("mason-registry")
-    local ensure_installed = opts.ensure_installed or {}
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
-    -- Ensure all listed tools are installed
-    for _, tool in ipairs(ensure_installed) do
-      local package = mason_registry.get_package(tool)
-      if not package:is_installed() then
-        package:install()
-      end
-    end  end,
-  opts = {
-    ensure_installed = {
-      "bash-language-server",
-      "black",
-      "clangd",
-      "clang-format",
-      "css-lsp",
-      "debugpy",
-      "delve",
-      "dockerfile-language-server",
-      "golangci-lint",
-      "gopls",
-      "html-lsp",
-      "isort",
-      "stylua",
-      "taplo",
-      "terraform-ls",
-      "tflint",
-      "typescript-language-server",
-      "lua-language-server",
-      "markdownlint",
-      "marksman",
-      "prettier",
-      "pylint",
-      "pyright",
-      "rubocop",
-      "ruby-lsp",
-      "shfmt",
-      "sql-formatter",
-      "vim-language-server",
-      "yaml-language-server",
+-- Customize Mason
+
+---@type LazySpec
+return {
+  -- use mason-tool-installer for automatically installing Mason packages
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    -- overrides `require("mason-tool-installer").setup(...)`
+    opts = {
+      -- Make sure to use the names found in `:Mason`
+      ensure_installed = {
+        -- install language servers
+        "lua-language-server",
+
+        -- install formatters
+        "stylua",
+
+        -- install debuggers
+        "debugpy",
+
+        -- install any other package
+        "tree-sitter-cli",
+      },
     },
   },
 }

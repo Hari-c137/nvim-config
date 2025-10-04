@@ -1,42 +1,15 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+-- Customize Treesitter
+
+---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
-      "bash",
-      "c",
-      "cpp",
-      "css",
-      "csv",
-      "diff",
-      "dockerfile",
-      "go",
-      "gosum",
-      "gomod",
-      "git_config",
-      "gitignore",
-      "graphql",
-      "hcl",
-      "html",
-      "ini",
-      "javascript",
-      "json",
-      "jsonc",
       "lua",
-      "make",
-      "markdown",
-      "mermaid",
-      "python",
-      "ruby",
-      "scss",
-      "sql",
-      "starlark",
-      "terraform",
-      "toml",
-      "tsx",
       "vim",
-      "xml",
-      "yaml",
+      -- add more arguments for adding more treesitter parsers
     },
-    auto_install = "true",
   },
 }
